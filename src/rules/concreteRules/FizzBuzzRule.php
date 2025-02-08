@@ -6,7 +6,7 @@ use App\Rules\RuleInterface\RuleInterface;
 
 class FizzBuzzRule implements RuleInterface
 {
-    //Can be made public and include in RuleInterface to use for extention or midifcation purpose
+    //Can be made public and include in RuleInterface to use for extention or midifcation purpose.
     private const RULE_NAME = "FizzBuzz";
 
     public function apply(int $number): ?string

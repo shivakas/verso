@@ -1,7 +1,6 @@
 # verso
-# FizzBuzz implementation with unit testing
-
-# Release Notes - FizzBuzz Application
+<h1>  FizzBuzz implementation with unit testing <h1/>
+<h1> Release Notes - FizzBuzz Application <h1/>
 Version: 1.0.0<br/>
 Release Date: 12-Feb-2025<br/>
 
