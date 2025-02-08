@@ -6,8 +6,18 @@ use App\rules\ruleInterface\RuleInterface;
 
 class RuleService
 {
+    /**
+    * RuleInterface[]
+    * @var array
+    */
     private array $rules;
 
+    /**
+    * NumberProcessor constructor.
+    *
+    * @param RuleInterface[] $rules Array of rules to apply
+    * @throws \InvalidArgumentException if any rule does not implement RuleInterface
+    */
     public function __construct(array $rules)
     {
          // Validate that every rule implements the RuleInterface
