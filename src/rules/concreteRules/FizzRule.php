@@ -1,6 +1,6 @@
 <?php
 
-namespace App\rules\concreteRules;
+namespace App\Rules\concreteRules;
 
 use App\Rules\RuleInterface\RuleInterface;
 
