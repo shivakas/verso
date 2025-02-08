@@ -3,5 +3,9 @@
     "description": "FizzBuzz application and unit test",
     "type": "project",
     "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Rules\\": "src/rules/"
+        }
     }
 }
