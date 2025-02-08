@@ -6,7 +6,7 @@ use App\rules\ruleInterface\RuleInterface;
 
 /**
  * This class implements strategy design pattern for different rules object creation
- * and thier behaviour dynamically 
+ * and thier behaviour dynamically.
  */
 class RuleService
 {
@@ -21,7 +21,7 @@ class RuleService
     * NumberProcessor constructor.
     *
     * @param RuleInterface[] $rules Array of rules to apply
-    * @throws \InvalidArgumentException if any rule does not implement RuleInterface
+    * @throws \InvalidArgumentException if any rule does not implement RuleInterface.
     */
     public function __construct(array $rules)
     {
