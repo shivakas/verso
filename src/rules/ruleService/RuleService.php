@@ -4,12 +4,17 @@ namespace App\Rules\ruleService;
 
 use App\rules\ruleInterface\RuleInterface;
 
+/**
+ * This class implements strategy design pattern for different rules object creation
+ * and thier behaviour dynamically 
+ */
 class RuleService
 {
     /**
-    * RuleInterface[]
-    * @var array
-    */
+     * RuleInterface[]
+     * Summary of rules
+     * @var array
+     */
     private array $rules;
 
     /**
@@ -25,11 +30,11 @@ class RuleService
     }
 
     /**
-     * Summary of generate
-     * @param int $start
-     * @param int $end
-     * @return string[]
-     */
+    * Summary of generate
+    * @param int $start
+    * @param int $end
+    * @return string[]
+    */
     public function generate(int $start, int $end): array
     {
         $result = [];
@@ -47,13 +52,13 @@ class RuleService
         return $result;
     }
 
-     /**
-     * Validates that each rule implements RuleInterface.
-     *
-     * @param RuleInterface[] $rules
-     * @return RuleInterface[]
-     * @throws \InvalidArgumentException
-     */
+    /**
+    * Validates that each rule implements RuleInterface.
+    *
+    * @param RuleInterface[] $rules
+    * @return RuleInterface[]
+    * @throws \InvalidArgumentException
+    */
     private function validateRules(array $rules): array
     {
         foreach ($rules as $rule) {
