@@ -2,13 +2,16 @@
 
 namespace App\Rules\ruleService;
 
+use App\rules\ruleInterface\RuleInterface;
+
 class RuleService
 {
     private array $rules;
 
     public function __construct(array $rules)
     {
-        $this->rules = $rules;
+         // Validate that every rule implements the RuleInterface
+         $this->rules = $this->validateRules($rules);
     }
 
     /**
@@ -32,5 +35,23 @@ class RuleService
         }
 
         return $result;
+    }
+
+     /**
+     * Validates that each rule implements RuleInterface.
+     *
+     * @param RuleInterface[] $rules
+     * @return RuleInterface[]
+     * @throws \InvalidArgumentException
+     */
+    private function validateRules(array $rules): array
+    {
+        foreach ($rules as $rule) {
+            if (!$rule instanceof RuleInterface) {
+                throw new \InvalidArgumentException('Each rule must implement RuleInterface.');
+            }
+        }
+
+        return $rules;
     }
 }
