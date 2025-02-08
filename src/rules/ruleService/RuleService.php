@@ -17,18 +17,20 @@ class RuleService
      * @param int $end
      * @return string[]
      */
-     public function generate(int $start, int $end): array
+    public function generate(int $start, int $end): array
     {
         $result = [];
 
         for ($i = $start; $i <= $end; $i++) {
+            $output = (string) $i;
+
             foreach ($this->rules as $rule) {
-                $output = $rule->apply($i);
+                $output = $rule->apply($i) ?? $output;
             }
+
             $result[] = $output;
         }
 
         return $result;
     }
-
 }
