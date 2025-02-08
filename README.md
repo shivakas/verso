@@ -1,9 +1,9 @@
 # verso
-FizzBuzz implementation with unit testing
+# FizzBuzz implementation with unit testing
 
-Release Notes - FizzBuzz Application
-Version: 1.0.0
-Release Date: 12-Feb-2025
+# Release Notes - FizzBuzz Application
+Version: 1.0.0___
+Release Date: 12-Feb-2025__
 
 Overview:
 application which iterates over all numbers from one to 100. If the
