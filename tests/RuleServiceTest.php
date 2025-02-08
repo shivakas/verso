@@ -23,7 +23,7 @@ class RuleServiceTest extends TestCase
         $result = $fizzBuzzGenerator->generate(1, 16);
         $this->assertEquals($expectedOutput, $result);
     }
-    
+
     public function testFizzBuzzEdgeCase()
     {
         // Create the rules (Fizz, Buzz and FizzBuzz)
@@ -40,8 +40,24 @@ class RuleServiceTest extends TestCase
         $result = $fizzBuzzGenerator->generate(5, 5);
         $this->assertEquals($expectedOutput, $result);
 
+        // Test when the range has only one number, e.g., 90
         $expectedOutput = ['FizzBuzz'];
         $result = $fizzBuzzGenerator->generate(start: 90, end: 90);
+        $this->assertEquals($expectedOutput, $result);
+    }
+
+    public function testDynamicRuleCreationAndProcessing()
+    {
+        $rules = [new FizzRule(), new BuzzRule()];
+        $fizzBuzzGenerator = new RuleService($rules);
+
+        // Test the FizzBuzz sequence from 1 to 15
+        $expectedOutput = [
+            '1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', 
+            '11', 'Fizz', '13', '14', 'Buzz', '16'
+        ];
+        
+        $result = $fizzBuzzGenerator->generate(1, 16);
         $this->assertEquals($expectedOutput, $result);
     }
 }
