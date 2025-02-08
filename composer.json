@@ -1,0 +1,7 @@
+{
+    "name": "fizzbuzz/fizzbuzz-app",
+    "description": "FizzBuzz application and unit test",
+    "type": "project",
+    "autoload": {
+    }
+}
