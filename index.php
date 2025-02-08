@@ -8,7 +8,7 @@ use App\Rules\RuleService\RuleService;
 require 'vendor/autoload.php';
 
 // Initialize Rules
-$rules = [new FizzRule(), new BuzzRule(), 'a'];
+$rules = [new FizzRule(), new BuzzRule(), new FizzBuzzRule()];
 
 try{
     $fizzBuzz = new RuleService($rules);
