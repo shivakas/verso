@@ -69,4 +69,22 @@ class RuleService
 
         return $rules;
     }
+
+    /* 
+    // A bit Fancy alternative for generator function above
+    public function generate(int $start, int $end): array
+    {
+        return array_map(fn($i) => $this->applyRules($i), range($start, $end));
+    }
+
+    private function applyRules(int $number): string
+    {
+        $output = '';
+
+        foreach ($this->rules as $rule) {
+            $output = $rule->apply($number) ?? $output;
+        }
+
+        return $output ?: (string) $number;
+    }*/
 }
