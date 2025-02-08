@@ -60,4 +60,11 @@ class RuleServiceTest extends TestCase
         $result = $fizzBuzzGenerator->generate(1, 16);
         $this->assertEquals($expectedOutput, $result);
     }
+    
+    public function testInvalidRuleThrowsException()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $rules = [new FizzRule(), new BuzzRule(), 'InvalidRule'];
+        $fizzBuzzGenerator = new RuleService($rules);
+    }
 }
